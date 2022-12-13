@@ -1,4 +1,5 @@
 const path = require('path');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -13,6 +14,14 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
@@ -29,4 +38,11 @@ module.exports = {
       },
     ],
   },
+  // plugins: [
+  //   new HtmlWebpackPlugin({
+  //     inject: 'body',
+  //     template: './src/index.html',
+  //     filename: 'index.html',
+  //   }),
+  // ],
 };

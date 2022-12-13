@@ -1,0 +1,25 @@
+@import "vars";
+@import "sidebar";
+@import "main";
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway/Raleway-VariableFont_wght.ttf') format("truetype");
+}
+
+* {
+  font-family: $font-stack;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#content {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}

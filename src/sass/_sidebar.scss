@@ -1,0 +1,74 @@
+.sidebar {
+  background: $sidebar-color;
+  color: $primary-font-color;
+  font-family: $font-stack;
+  position: relative;
+  height: 100%;
+  width: 25vw;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    &__button-group {
+      display: flex;
+      #search-btn {
+        height: 40px;
+        width: 161px;
+        background: #6E707A;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        color: $primary-font-color;
+        font-family: $font-stack;
+        font-weight: 500;
+        font-size: 16px;
+        &:hover {
+          cursor: pointer;
+          background: $primary-font-color;
+          color: #6E707A;
+        }
+        #geolocation-btn {
+        }
+      }
+    }
+    &__temp {
+      .temperature {
+        font-size: 114px;
+        color: $primary-font-color;
+      }
+      .unit {
+        font-size: 48px;
+        color: $secondary-font-color;
+        font-weight: bold;
+      }
+    }
+    &__weather {
+      font-size: 36px;
+      color: $secondary-font-color;
+      font-weight: 600;
+    }
+    &__date {
+      font-size: 18px;
+      color: $tertiary-font-color;
+      display: flex;
+      // justify-content: center;
+      gap: 1rem;
+      font-weight: 500;
+    }
+    &__location {
+      display: flex;
+      color: $tertiary-font-color;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 18px;
+    }
+  }
+  &::after {
+    content: "";
+    background-image: url('../assets/Cloud-background.png');
+    background-position: 50% 25%;
+    background-repeat: no-repeat;
+    height: 100%;
+    inset: 0;
+    opacity: 0.05;
+    position: absolute;
+  }
+}
