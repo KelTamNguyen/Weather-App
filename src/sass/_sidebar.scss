@@ -2,32 +2,36 @@
   background: $sidebar-color;
   color: $primary-font-color;
   font-family: $font-stack;
-  position: relative;
+  position: relative; // keep this for the ::after
   height: 100%;
-  width: 25vw;
+  width: 30vw;
   &__container {
     display: flex;
     flex-direction: column;
+    padding: 42px 46px;
+    box-sizing: border-box;
     height: 100%;
+    align-items: center;
+    justify-content: space-between;
     &__button-group {
       display: flex;
+      justify-content: space-between;
+      width: 100%;
       #search-btn {
         height: 40px;
-        width: 161px;
-        background: #6E707A;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        color: $primary-font-color;
+        width: 160px;
         font-family: $font-stack;
         font-weight: 500;
         font-size: 16px;
-        &:hover {
-          cursor: pointer;
-          background: $primary-font-color;
-          color: #6E707A;
-        }
-        #geolocation-btn {
-        }
       }
+      #geolocation-btn {
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+    &__img {
+      width: 200px;
+      height: 235px;
     }
     &__temp {
       .temperature {
@@ -43,32 +47,48 @@
     &__weather {
       font-size: 36px;
       color: $secondary-font-color;
-      font-weight: 600;
+      font-weight: bold;
     }
-    &__date {
-      font-size: 18px;
-      color: $tertiary-font-color;
+    &__info {
       display: flex;
-      // justify-content: center;
-      gap: 1rem;
-      font-weight: 500;
-    }
-    &__location {
-      display: flex;
-      color: $tertiary-font-color;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 0.25rem;
-      font-size: 18px;
+      &__date {
+        font-size: 18px;
+        color: $tertiary-font-color;
+        display: flex;
+        // justify-content: center;
+        gap: 1rem;
+        font-weight: 500;
+      }
+      &__location {
+        display: flex;
+        color: $tertiary-font-color;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 18px;
+      }
     }
   }
-  &::after {
-    content: "";
-    background-image: url('../assets/Cloud-background.png');
-    background-position: 50% 25%;
-    background-repeat: no-repeat;
-    height: 100%;
-    inset: 0;
-    opacity: 0.05;
-    position: absolute;
+  // &::after {
+  //   content: "";
+  //   background-image: url('../assets/Cloud-background.png');
+  //   background-position: 50% 25%;
+  //   background-repeat: no-repeat;
+  //   height: 100%;
+  //   inset: 0;
+  //   opacity: 0.05;
+  //   position: absolute;
+  // }
+}
+
+.sidebar-btn {
+  background: #6E707A;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: $primary-font-color;
+  &:hover {
+    background-color: $primary-font-color;
+    color: #6E707A;
   }
 }
